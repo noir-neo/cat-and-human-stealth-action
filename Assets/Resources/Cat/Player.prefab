@@ -185,7 +185,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parameters: {fileID: 114935090217202892}
-  direction: {x: 0, y: 0}
 --- !u!114 &114935090217202892
 MonoBehaviour:
   m_ObjectHideFlags: 1
