@@ -7,12 +7,12 @@ namespace Players.InputImpls
 {
     public class KeyboardInputEventProvider : MonoBehaviour, IInputEventProvider
     {
-        public IObservable<Vector2> MoveDirection =>
+        public IObservable<float> MoveDirection =>
             this.FixedUpdateAsObservable()
                 .Select(_ =>
                 {
-                    var left = Input.GetKey(KeyCode.W) ? Vector2.left : Vector2.zero;
-                    var right = Input.GetKey(KeyCode.S) ? Vector2.right : Vector2.zero;
+                    var left = Input.GetKey(KeyCode.W) ? -1f : 0f;
+                    var right = Input.GetKey(KeyCode.S) ? 1f : 0f;
                     return left + right;
                 });
     }

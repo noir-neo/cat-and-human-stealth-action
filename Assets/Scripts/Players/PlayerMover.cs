@@ -16,7 +16,7 @@ namespace Players
         {
             this.FixedUpdateAsObservable()
                 .WithLatestFrom(inputEventProvider.MoveDirection, (_, input) => input)
-                .Select(input => (Vector2.up + input).normalized)
+                .Select(input => (Vector2.up + Vector2.right * input).normalized) // Automatic Movement + User Input
                 .WithLatestFrom(_playerCore.MoveSpeed, (direction, speed) => direction * speed * Time.deltaTime)
                 .Subscribe(Move)
                 .AddTo(this);

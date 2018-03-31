@@ -5,6 +5,6 @@ namespace Players
 {
     public interface IInputEventProvider
     {
-        IObservable<Vector2> MoveDirection { get; }
+        IObservable<float> MoveDirection { get; }
     }
 }
