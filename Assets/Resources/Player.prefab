@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114935090217202892}
   - component: {fileID: 114541692172728788}
   - component: {fileID: 114091810471180998}
+  - component: {fileID: 114685359630872346}
   - component: {fileID: 114500944201576086}
   - component: {fileID: 65994980948086798}
   m_Layer: 0
@@ -141,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _components:
   - {fileID: 114541692172728788}
+  - {fileID: 114685359630872346}
   _identifier: 
   _context: {fileID: 0}
   _bindType: 1
@@ -156,6 +158,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parameters: {fileID: 114935090217202892}
+--- !u!114 &114685359630872346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337594243784164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34f0645492ca04a9fb5b6fdb63bccef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerCore: {fileID: 114541692172728788}
+  _jumpSeName: nyan
 --- !u!114 &114935090217202892
 MonoBehaviour:
   m_ObjectHideFlags: 1
