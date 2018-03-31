@@ -29,8 +29,8 @@ namespace Players
                     break;
                 case EventType.Obstacle:
                     var obstacle = gameObject.GetComponent<IObstacle>();
-                    var target = obstacle.JumpTarget;
-                    _playerCore.JumpTo(target.transform.position);
+                    var target = obstacle.JumpTarget.transform.position;
+                    _playerCore.JumpTo(target);
                     break;
             }
         }
