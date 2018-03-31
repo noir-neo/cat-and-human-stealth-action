@@ -11,8 +11,8 @@ namespace Players
     {
         [SerializeField] private CharacterCore _characterCore;
 
-        private readonly ISubject<Unit> _jump = new Subject<Unit>();
-        public IObservable<Unit> Jump => _jump;
+        private readonly ISubject<Vector3> _jump = new Subject<Vector3>();
+        public IObservable<Vector3> Jump => _jump;
 
         private readonly BoolReactiveProperty _isCrossedGoal = new BoolReactiveProperty(false);
         public IObservable<bool> IsCrossedGoal => _isCrossedGoal;
@@ -28,6 +28,11 @@ namespace Players
         public void Goal()
         {
             _isCrossedGoal.Value = true;
+        }
+
+        public void JumpTo(Vector3 position)
+        {
+            _jump.OnNext(position);
         }
     }
 }
