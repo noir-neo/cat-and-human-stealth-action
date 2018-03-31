@@ -1,4 +1,4 @@
-﻿using Players;
+﻿using Characters;
 using UniRx;
 using UnityEngine;
 using Zenject;
@@ -9,11 +9,11 @@ namespace Cameras
     {
 
         [Inject]
-        private void Initialize(IPlayerPosition playerPosition)
+        private void Initialize(ICharacterPosition characterPosition)
         {
-            playerPosition.Position.First()
+            characterPosition.Position.First()
                 .Select(x => transform.position - x)
-                .CombineLatest(playerPosition.Position, (offset, target) => target + offset)
+                .CombineLatest(characterPosition.Position, (offset, target) => target + offset)
                 .Subscribe(x => transform.position = x)
                 .AddTo(this);
         }
