@@ -12,5 +12,10 @@ namespace Enemies
         {
             _characterCore.Direction = Vector2.up;
         }
+
+        public void UpdateDirection(Vector2 direction)
+        {
+            _characterCore.Direction = direction;
+        }
     }
 }
