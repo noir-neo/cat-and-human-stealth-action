@@ -25,6 +25,9 @@ namespace Players
                 case EventType.Goal:
                     _playerCore.Goal();
                     break;
+                case EventType.Human:
+                    _playerCore.Caught();
+                    break;
             }
         }
     }

@@ -14,8 +14,11 @@ namespace Players
         private readonly ISubject<Unit> _jump = new Subject<Unit>();
         public IObservable<Unit> Jump => _jump;
 
-        private readonly BoolReactiveProperty _isCrossedGoal = new BoolReactiveProperty(false);
-        public IObservable<bool> IsCrossedGoal => _isCrossedGoal;
+        private readonly ISubject<bool> _gameoverSubject = new Subject<bool>();
+        public IObservable<bool> GameOverAsObservable()
+        {
+            return _gameoverSubject;
+        }
 
         [Inject]
         public void Initialize(IInputEventProvider inputEventProvider)
@@ -27,7 +30,12 @@ namespace Players
 
         public void Goal()
         {
-            _isCrossedGoal.Value = true;
+            _gameoverSubject.OnNext(true);
+        }
+
+        public void Caught()
+        {
+            _gameoverSubject.OnNext(false);
         }
     }
 }

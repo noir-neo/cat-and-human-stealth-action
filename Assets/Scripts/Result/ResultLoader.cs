@@ -5,7 +5,7 @@ using GameManagers;
 namespace Result
 {
     public class ResultLoader: MonoBehaviour, IMainGameEndObserver {
-        public void MainGameEnd()
+        public void MainGameEnd(bool isClear)
         {
             SceneManager.LoadScene("MainScene");
         }
