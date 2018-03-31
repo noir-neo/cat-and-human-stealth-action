@@ -419,7 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bgmName:
-    value: 
+    value: main_game
 --- !u!4 &809603664
 Transform:
   m_ObjectHideFlags: 0
