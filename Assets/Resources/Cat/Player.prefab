@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4948523405739970}
   - component: {fileID: 54827526870347302}
+  - component: {fileID: 65428276883990606}
+  - component: {fileID: 95222209220639458}
   - component: {fileID: 114935090217202892}
   - component: {fileID: 114852685625271640}
   - component: {fileID: 114915425889002922}
@@ -28,8 +30,10 @@ GameObject:
   - component: {fileID: 114685359630872346}
   - component: {fileID: 114222456810449940}
   - component: {fileID: 114001685177061628}
+  - component: {fileID: 114890397261142434}
   - component: {fileID: 114500944201576086}
-  - component: {fileID: 65994980948086798}
+  - component: {fileID: 114546969078468448}
+  - component: {fileID: 114415714680526166}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -62,7 +66,7 @@ Transform:
   m_GameObject: {fileID: 1996902409726604}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 4948523405739970}
   m_RootOrder: 0
@@ -75,7 +79,7 @@ Transform:
   m_GameObject: {fileID: 1337594243784164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4106534397387160}
   m_Father: {fileID: 0}
@@ -136,8 +140,8 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &65994980948086798
+  m_CollisionDetection: 1
+--- !u!65 &65428276883990606
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -147,8 +151,25 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0021101437, y: 0.0025999998, z: 0.0060729766}
-  m_Center: {x: 7.4505804e-11, y: 0.0012999999, z: -0.000015525966}
+  m_Size: {x: 0.25, y: 0.32, z: 0.85}
+  m_Center: {x: 0, y: 0.16, z: -0.115}
+--- !u!95 &95222209220639458
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337594243784164}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c5baff33e2754921813c0a67e9991c3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114001685177061628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -186,6 +207,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerCore: {fileID: 114541692172728788}
+--- !u!114 &114415714680526166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337594243784164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb219b23cdf4b314f94a27bca3cc8012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114500944201576086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,6 +250,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterCore: {fileID: 114852685625271640}
+--- !u!114 &114546969078468448
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337594243784164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d525c42c11d945f4398061ed8f84e5f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114685359630872346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -243,6 +286,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parameters: {fileID: 114935090217202892}
+--- !u!114 &114890397261142434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337594243784164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02309a5cba7ef49eabcd52aa9c5b0948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterCore: {fileID: 114852685625271640}
+  _playerCore: {fileID: 114541692172728788}
+  _rigidBody: {fileID: 54827526870347302}
+  _animator: {fileID: 95222209220639458}
 --- !u!114 &114915425889002922
 MonoBehaviour:
   m_ObjectHideFlags: 1

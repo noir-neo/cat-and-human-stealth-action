@@ -4,6 +4,7 @@ using UniRx.Triggers;
 using System;
 using EventTriggers;
 using EventType = EventTriggers.EventType;
+using Obstacles;
 
 namespace Players
 {
@@ -14,19 +15,25 @@ namespace Players
 
         private void OnTriggerEnter(Collider collider)
         {
-            var obstacle = collider.gameObject.GetComponent<IEventTrigger>();
-            if (obstacle == null)
+            var gameObject = collider.gameObject;
+            var trigger = gameObject.GetComponent<IEventTrigger>();
+            if (trigger == null)
             {
                 return;
             }
 
-            switch (obstacle.EventType)
+            switch (trigger.EventType)
             {
                 case EventType.Goal:
                     _playerCore.Goal();
                     break;
                 case EventType.Human:
                     _playerCore.Caught();
+                    break;
+                case EventType.Obstacle:
+                    var obstacle = gameObject.GetComponent<IObstacle>();
+                    var target = obstacle.JumpTarget.transform.position;
+                    _playerCore.JumpTo(target);
                     break;
             }
         }

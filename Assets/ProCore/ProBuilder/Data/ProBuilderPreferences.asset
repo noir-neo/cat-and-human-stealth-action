@@ -17,6 +17,7 @@ MonoBehaviour:
   - pbDefaultEditLevel
   - pbDefaultSelectionMode
   - pbHandleAlignment
+  - pb_GIWorkflowMode
   m_Float_keys:
   - pbEditorScroll.x
   - pbEditorScroll.y

@@ -11,8 +11,8 @@ namespace Players
     {
         [SerializeField] private CharacterCore _characterCore;
 
-        private readonly ISubject<Unit> _jump = new Subject<Unit>();
-        public IObservable<Unit> Jump => _jump;
+        private readonly ISubject<Vector3> _jump = new ReplaySubject<Vector3>();
+        public IObservable<Vector3> Jump => _jump;
 
         private readonly ISubject<bool> _gameoverSubject = new Subject<bool>();
         public IObservable<bool> GameOverAsObservable()
@@ -36,6 +36,11 @@ namespace Players
         public void Caught()
         {
             _gameoverSubject.OnNext(false);
+        }
+
+        public void JumpTo(Vector3 position)
+        {
+            _jump.OnNext(position);
         }
     }
 }
