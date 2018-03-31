@@ -15,7 +15,10 @@ namespace Characters
 
         private void Move(Vector2 movement)
         {
-            _rigidbody.MoveRotation(Quaternion.LookRotation(movement.X0Y()));
+            if (movement != Vector2.zero)
+            {
+                _rigidbody.MoveRotation(Quaternion.LookRotation(movement.X0Y()));
+            }
             _rigidbody.MovePosition(transform.position + transform.forward * movement.magnitude);
         }
     }

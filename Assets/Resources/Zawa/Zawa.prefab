@@ -102,6 +102,8 @@ GameObject:
   - component: {fileID: 114750440793723062}
   - component: {fileID: 114034152414919610}
   - component: {fileID: 136478162646820990}
+  - component: {fileID: 114877469677538020}
+  - component: {fileID: 114588368208714568}
   m_Layer: 0
   m_Name: Zawa
   m_TagString: Untagged
@@ -2533,6 +2535,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterCore: {fileID: 114058787053881398}
   _rigidbody: {fileID: 54030786226790448}
+--- !u!114 &114588368208714568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1149326422770794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0166d8ff8d905b048b2448179e1f5d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _components:
+  - {fileID: 114877469677538020}
+  _identifier: 
+  _context: {fileID: 0}
+  _bindType: 1
 --- !u!114 &114750440793723062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2542,6 +2560,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4a7ddafade8d4406b234aa96b7e5800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterCore: {fileID: 114058787053881398}
+--- !u!114 &114877469677538020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1149326422770794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d6a03ef171648a7bff18c696794267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _characterCore: {fileID: 114058787053881398}
