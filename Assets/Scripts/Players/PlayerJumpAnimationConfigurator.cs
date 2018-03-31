@@ -7,7 +7,7 @@ using Characters;
 namespace Players
 {
     [RequireComponent(typeof(PlayerCore), typeof(Animator))]
-    public class PlayerJumpAnimationConfigurator: MonoBehaviour
+    public class PlayerJumpAnimationConfigurator : MonoBehaviour
     {
         [SerializeField] private CharacterCore _characterCore;
         [SerializeField] private PlayerCore _playerCore;
@@ -16,41 +16,41 @@ namespace Players
 
         public void Start()
         {
-            _animator.enabled = false;
-
-            _playerCore.Jump
-                .Subscribe(_ => {
+            _playerCore.JumpAsObservable()
+                .Subscribe(target =>
+                {
                     _characterCore.IsMovable = false;
                     _rigidBody.isKinematic = true;
-                    _animator.enabled = true;
+                    _animator.applyRootMotion = true;
+                    _animator.SetBool("IsJumping", true);
                 })
                 .AddTo(this);
 
-            var jumpAdjuster = _animator.GetBehaviour<ObservableStateMachineTrigger>();
-
-            var targetBodyPart = AvatarTarget.Root;
-            var weightMask = new MatchTargetWeightMask(Vector3.one, 1);
-            var startNormalizedTime = 0f;
-            var endNormalizedTime = 1f;
-
-            jumpAdjuster.OnStateUpdateAsObservable()
-                .WithLatestFrom(_playerCore.Jump, (info, target) => (new Tuple<Animator, Vector3>(info.Animator, target)))
-                .Subscribe(pair => {
+            var jumpState = _animator.GetBehaviour<ObservableStateMachineTrigger>();
+            jumpState.OnStateUpdateAsObservable()
+                .WithLatestFrom(_playerCore.JumpAsObservable(), (info, target) => (new Tuple<Animator, Vector3>(info.Animator, target)))
+                .Subscribe(pair =>
+                {
                     var animator = pair.Item1;
+                    if (animator.isMatchingTarget)
+                    {
+                        return;
+                    }
                     var targetPosition = pair.Item2;
                     var currentPosition = _rigidBody.position;
-                    var matchPosition = targetPosition;
-                    var matchRotation = Quaternion.LookRotation(targetPosition - currentPosition);
-                    animator.MatchTarget(matchPosition, matchRotation, targetBodyPart, weightMask, startNormalizedTime, endNormalizedTime);
+                    var rotation =  Quaternion.identity; // Quaternion.LookRotation(targetPosition - currentPosition);
+                    animator.MatchTarget(targetPosition, rotation, AvatarTarget.Root, new MatchTargetWeightMask(Vector3.one, 1), 0, 1);
                 })
                 .AddTo(this);
-
-            jumpAdjuster.OnStateExitAsObservable()
-                .Subscribe(info => {
-                    _animator.enabled = false;
+            jumpState.OnStateExitAsObservable()
+                .Subscribe(info =>
+                {
+                    _animator.SetBool("IsJumping", false);
+                    _animator.applyRootMotion = false;
                     _rigidBody.isKinematic = false;
                     _characterCore.IsMovable = true;
-                });
+                })
+                .AddTo(this);
 
         }
     }

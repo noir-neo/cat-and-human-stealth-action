@@ -19,6 +19,6 @@ public class PlayerSeEmitter : MonoBehaviour, ISeEventProvider
 
     private IObservable<string> Jump()
     {
-        return _playerCore.Jump.Select(_ => _jumpSeName);
+        return _playerCore.JumpAsObservable().Select(_ => _jumpSeName);
     }
 }
