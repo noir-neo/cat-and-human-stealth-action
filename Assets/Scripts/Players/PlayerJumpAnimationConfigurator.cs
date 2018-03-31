@@ -39,9 +39,6 @@ namespace Players
                     var animator = pair.Item1;
                     var targetPosition = pair.Item2;
                     var currentPosition = _rigidBody.position;
-                    Debug.Log("");
-                    Debug.Log(currentPosition);
-                    Debug.Log(targetPosition);
                     var matchPosition = targetPosition;
                     var matchRotation = Quaternion.LookRotation(targetPosition - currentPosition);
                     animator.MatchTarget(matchPosition, matchRotation, targetBodyPart, weightMask, startNormalizedTime, endNormalizedTime);
