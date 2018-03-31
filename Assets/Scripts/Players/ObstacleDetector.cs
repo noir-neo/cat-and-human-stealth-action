@@ -2,7 +2,8 @@ using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
 using System;
-using Obstacles;
+using EventTriggers;
+using EventType = EventTriggers.EventType;
 
 namespace Players
 {
@@ -13,15 +14,15 @@ namespace Players
 
         private void OnTriggerEnter(Collider collider)
         {
-            var obstacle = collider.gameObject.GetComponent<IObstacle>();
+            var obstacle = collider.gameObject.GetComponent<IEventTrigger>();
             if (obstacle == null)
             {
                 return;
             }
 
-            switch (obstacle.ObstacleType)
+            switch (obstacle.EventType)
             {
-                case ObstacleType.GOAL:
+                case EventType.Goal:
                     _playerCore.Goal();
                     break;
             }

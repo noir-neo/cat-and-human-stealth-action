@@ -327,7 +327,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 226529166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 73.2}
+  m_LocalPosition: {x: 0, y: 0, z: 9.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d05ec860c3ca049ee8a030e098264f6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _obstacleType: 0
+  _eventType: 0
 --- !u!1001 &288529104
 Prefab:
   m_ObjectHideFlags: 0
@@ -869,6 +869,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114235314943237604, guid: 5bb6e203584214461a0db02f222dd9bd,
+        type: 2}
+      propertyPath: m_selectedTriangles.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4800598595219368, guid: 5bb6e203584214461a0db02f222dd9bd, type: 2}
       propertyPath: m_LocalPosition.x
       value: -5
@@ -911,6 +916,16 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 30394645}
+    - target: {fileID: 114235314943237604, guid: 5bb6e203584214461a0db02f222dd9bd,
+        type: 2}
+      propertyPath: m_selectedTriangles.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114235314943237604, guid: 5bb6e203584214461a0db02f222dd9bd,
+        type: 2}
+      propertyPath: m_selectedTriangles.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5bb6e203584214461a0db02f222dd9bd, type: 2}
   m_IsPrefabParent: 0
