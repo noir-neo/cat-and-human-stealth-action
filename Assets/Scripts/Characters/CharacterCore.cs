@@ -2,6 +2,7 @@
 using UniRx;
 using UniRx.Triggers;
 using System;
+using GameManagers;
 
 namespace Characters
 {
@@ -11,20 +12,21 @@ namespace Characters
         [SerializeField] private CharacterParameters _parameters;
         public CharacterParameters CharacterParameters => _parameters;
 
-        private readonly FloatReactiveProperty _moveSpeed = new FloatReactiveProperty(0);
-        public IObservable<float> MoveSpeed => _moveSpeed;
+        private float _moveSpeed = 0;
+        public bool IsMovable { private get; set; }
         public Vector2 Direction { private get; set; }
 
         public IObservable<Vector3> Position => this.FixedUpdateAsObservable().Select(_ => transform.position);
 
         private void Awake()
         {
-            _moveSpeed.Value = _parameters.MoveSpeed;
+            _moveSpeed = _parameters.MoveSpeed;
         }
 
         public Vector2 Velocity()
         {
-            return Direction * _moveSpeed.Value;
+            var speed = IsMovable ? _moveSpeed : 0;
+            return Direction * speed;
         }
     }
 }

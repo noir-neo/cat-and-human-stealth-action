@@ -1,7 +1,4 @@
 ﻿using UnityEngine;
-using UniRx;
-using UniRx.Triggers;
-using Zenject;
 
 namespace Characters
 {

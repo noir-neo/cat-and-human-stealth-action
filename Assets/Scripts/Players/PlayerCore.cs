@@ -11,10 +11,11 @@ namespace Players
     {
         [SerializeField] private CharacterCore _characterCore;
 
-        public IObservable<float> MoveSpeed => _characterCore.MoveSpeed;
-
         private readonly ISubject<Unit> _jump = new Subject<Unit>();
         public IObservable<Unit> Jump => _jump;
+
+        private readonly BoolReactiveProperty _isCrossedGoal = new BoolReactiveProperty(false);
+        public IObservable<bool> IsCrossedGoal => _isCrossedGoal;
 
         [Inject]
         public void Initialize(IInputEventProvider inputEventProvider)
@@ -22,6 +23,11 @@ namespace Players
             inputEventProvider.MoveDirection
                 .Subscribe(input => _characterCore.Direction = (Vector2.up + Vector2.right * input).normalized) // Automatic Movement + User Input
                 .AddTo(this);
+        }
+
+        public void Goal()
+        {
+            _isCrossedGoal.Value = true;
         }
     }
 }
