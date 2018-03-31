@@ -27,6 +27,9 @@ namespace Players
                 case EventType.Goal:
                     _playerCore.Goal();
                     break;
+                case EventType.Human:
+                    _playerCore.Caught();
+                    break;
                 case EventType.Obstacle:
                     var obstacle = gameObject.GetComponent<IObstacle>();
                     var target = obstacle.JumpTarget.transform.position;

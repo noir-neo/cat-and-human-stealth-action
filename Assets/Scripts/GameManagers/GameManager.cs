@@ -30,13 +30,13 @@ namespace GameManagers
                 .AddTo(this);
 
             mainGameEndEventProviders
-                .Select(provider => provider.MainGameEnd)
+                .Select(provider => provider.MainGameOver)
                 .Merge()
-                .Subscribe(_ =>
+                .Subscribe(x =>
                 {
                     foreach (var observer in mainGameEndObserver)
                     {
-                        observer.MainGameEnd();
+                        observer.MainGameEnd(x);
                     }
                 })
                 .AddTo(this);

@@ -4,6 +4,6 @@ using UniRx;
 namespace GameManagers
 {
     public interface IMainGameEndObserver {
-        void MainGameEnd();
+        void MainGameEnd(bool isClear);
     }
 }
