@@ -18,7 +18,8 @@ namespace Characters
 
         private void Move(Vector2 movement)
         {
-            _rigidbody.MovePosition(transform.position + movement.X0Y());
+            _rigidbody.MoveRotation(Quaternion.LookRotation(movement.X0Y()));
+            _rigidbody.MovePosition(transform.position + transform.forward * movement.magnitude);
         }
     }
 }
