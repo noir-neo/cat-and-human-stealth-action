@@ -11,8 +11,6 @@ namespace Players
     {
         [SerializeField] private CharacterCore _characterCore;
 
-        public IObservable<float> MoveSpeed => _characterCore.MoveSpeed;
-
         private readonly ISubject<Unit> _jump = new Subject<Unit>();
         public IObservable<Unit> Jump => _jump;
 
