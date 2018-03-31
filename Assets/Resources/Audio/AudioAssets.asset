@@ -17,4 +17,4 @@ MonoBehaviour:
   - _name: nyan
     _audioClip: {fileID: 8300000, guid: 7fb9a792723454ebdb7f81b49185631d, type: 3}
   - _name: zawa
-    _audioClip: {fileID: 8300000, guid: af4d0174bbd0745f8a070c2405a24d2f, type: 3}
+    _audioClip: {fileID: 8300000, guid: d5a89fafd4dfb4bf287f884f7cd4dba1, type: 3}
