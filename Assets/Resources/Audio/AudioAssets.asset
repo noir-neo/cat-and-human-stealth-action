@@ -14,3 +14,7 @@ MonoBehaviour:
   _audioClipNames:
   - _name: main_game
     _audioClip: {fileID: 8300000, guid: 9bc88d957f2624178828a2f6967c381f, type: 3}
+  - _name: nyan
+    _audioClip: {fileID: 8300000, guid: 7fb9a792723454ebdb7f81b49185631d, type: 3}
+  - _name: zawa
+    _audioClip: {fileID: 8300000, guid: af4d0174bbd0745f8a070c2405a24d2f, type: 3}
