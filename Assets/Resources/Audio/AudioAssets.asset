@@ -11,4 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29cc03175924a48bfa2141451f9a65fc, type: 3}
   m_Name: AudioAssets
   m_EditorClassIdentifier: 
-  _audioClipNames: []
+  _audioClipNames:
+  - _name: main_game
+    _audioClip: {fileID: 8300000, guid: 9bc88d957f2624178828a2f6967c381f, type: 3}
