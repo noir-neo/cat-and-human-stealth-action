@@ -53,7 +53,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1123401791823966}
   m_Enabled: 1
-  m_CastShadows: 2
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -97,8 +97,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 10, z: 959.20264}
-  m_Center: {x: 5, y: 5, z: -20.398682}
+  m_Size: {x: 10, y: 0.5, z: 959.20264}
+  m_Center: {x: 5, y: -0.25, z: -20.398682}
 --- !u!65 &65102167037643028
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -109,8 +109,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 10, z: 959.20264}
-  m_Center: {x: 5, y: 5, z: -20.398682}
+  m_Size: {x: 0.5, y: 10, z: 959.20264}
+  m_Center: {x: -0.25, y: 5, z: -20.398682}
 --- !u!65 &65774822586546980
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -121,8 +121,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 10, z: 959.20264}
-  m_Center: {x: 5, y: 5, z: -20.398682}
+  m_Size: {x: 0.5, y: 10, z: 959.20264}
+  m_Center: {x: 10.25, y: 5, z: -20.398682}
 --- !u!114 &114055227295703794
 MonoBehaviour:
   m_ObjectHideFlags: 1

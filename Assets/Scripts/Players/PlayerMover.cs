@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
+using Zenject;
 
 namespace Players
 {
@@ -10,10 +11,13 @@ namespace Players
         [SerializeField] private PlayerCore _playerCore;
         [SerializeField] private Rigidbody _rigidbody;
 
-        private void Start()
+        [Inject]
+        public void Initialize(IInputEventProvider inputEventProvider)
         {
             this.FixedUpdateAsObservable()
-                .WithLatestFrom(_playerCore.Movement, (_, movement) => Time.deltaTime * movement)
+                .WithLatestFrom(inputEventProvider.MoveDirection, (_, input) => input)
+                .Select(input => (Vector2.up + Vector2.right * input).normalized) // Automatic Movement + User Input
+                .WithLatestFrom(_playerCore.MoveSpeed, (direction, speed) => direction * speed * Time.deltaTime)
                 .Subscribe(Move)
                 .AddTo(this);
         }

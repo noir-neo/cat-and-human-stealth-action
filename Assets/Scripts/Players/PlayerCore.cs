@@ -12,8 +12,7 @@ namespace Players
         public PlayerParameters PlayerParameters => _parameters;
 
         private readonly FloatReactiveProperty _moveSpeed = new FloatReactiveProperty(0);
-
-        public IObservable<Vector2> Movement => _moveSpeed.Select(speed => Vector2.up * speed);
+        public IObservable<float> MoveSpeed => _moveSpeed;
 
         public IObservable<Vector3> Position => this.FixedUpdateAsObservable().Select(_ => transform.position);
 
