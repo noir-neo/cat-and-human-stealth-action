@@ -11,7 +11,7 @@ namespace Players
     {
         [SerializeField] private CharacterCore _characterCore;
 
-        private readonly ISubject<Vector3> _jump = new Subject<Vector3>();
+        private readonly ISubject<Vector3> _jump = new ReplaySubject<Vector3>();
         public IObservable<Vector3> Jump => _jump;
 
         private readonly BoolReactiveProperty _isCrossedGoal = new BoolReactiveProperty(false);
