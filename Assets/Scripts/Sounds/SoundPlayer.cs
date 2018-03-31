@@ -12,6 +12,7 @@ namespace Sounds
 
         public void PlayOneShot(string name)
         {
+            if (_seSource == null) return;
             AudioClip clip;
             if (_audioAssets.AudioClips().TryGetValue(name, out clip))
             {
@@ -21,6 +22,7 @@ namespace Sounds
 
         public void Play(string name)
         {
+            if (_bgmSource == null) return;
             Stop();
             AudioClip clip;
             if (_audioAssets.AudioClips().TryGetValue(name, out clip))
@@ -32,6 +34,7 @@ namespace Sounds
 
         public void Stop()
         {
+            if (_bgmSource == null) return;
             _bgmSource.Stop();
         }
     }
