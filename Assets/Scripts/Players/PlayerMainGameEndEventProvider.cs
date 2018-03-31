@@ -10,9 +10,6 @@ namespace Players
     {
         [SerializeField] private PlayerCore _playerCore;
 
-        public IObservable<Unit> MainGameEnd =>
-            _playerCore.IsCrossedGoal
-                .Where(isCrossed => isCrossed)
-                .Select(_ => Unit.Default);
+        public IObservable<bool> MainGameOver => _playerCore.GameOverAsObservable();
     }
 }

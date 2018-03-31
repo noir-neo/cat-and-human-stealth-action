@@ -16,7 +16,7 @@ namespace Characters
             _characterCore.IsMovable = true;
         }
 
-        public void MainGameEnd()
+        public void MainGameEnd(bool isClear)
         {
             _characterCore.IsMovable = false;
         }
