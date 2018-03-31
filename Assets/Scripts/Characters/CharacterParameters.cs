@@ -2,9 +2,9 @@ using UnityEngine;
 using UniRx;
 using System;
 
-namespace Players
+namespace Characters
 {
-    public class PlayerParameters : MonoBehaviour
+    public class CharacterParameters : MonoBehaviour
     {
         [SerializeField] private float _moveSpeed;
         public float MoveSpeed => _moveSpeed;

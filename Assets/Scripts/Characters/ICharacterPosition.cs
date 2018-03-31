@@ -1,9 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Players
+namespace Characters
 {
-    public interface IPlayerPosition
+    public interface ICharacterPosition
     {
         IObservable<Vector3> Position { get; }
     }
