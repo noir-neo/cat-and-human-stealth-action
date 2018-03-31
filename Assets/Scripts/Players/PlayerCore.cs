@@ -1,8 +1,8 @@
 using UnityEngine;
 using UniRx;
-using UniRx.Triggers;
 using System;
 using Characters;
+using Zenject;
 
 namespace Players
 {
@@ -15,5 +15,13 @@ namespace Players
 
         private readonly ISubject<Unit> _jump = new Subject<Unit>();
         public IObservable<Unit> Jump => _jump;
+
+        [Inject]
+        public void Initialize(IInputEventProvider inputEventProvider)
+        {
+            inputEventProvider.MoveDirection
+                .Subscribe(input => _characterCore.Direction = (Vector2.up + Vector2.right * input).normalized) // Automatic Movement + User Input
+                .AddTo(this);
+        }
     }
 }

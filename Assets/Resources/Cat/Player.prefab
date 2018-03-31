@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c87f204148d489a90c8a3997fdf107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerCore: {fileID: 114541692172728788}
+  _characterCore: {fileID: 114852685625271640}
   _rigidbody: {fileID: 54827526870347302}
 --- !u!114 &114500944201576086
 MonoBehaviour:
@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parameters: {fileID: 114935090217202892}
+  direction: {x: 0, y: 0}
 --- !u!114 &114935090217202892
 MonoBehaviour:
   m_ObjectHideFlags: 1
