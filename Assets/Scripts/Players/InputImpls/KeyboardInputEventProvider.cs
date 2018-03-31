@@ -8,7 +8,7 @@ namespace Players.InputImpls
     public class KeyboardInputEventProvider : MonoBehaviour, IInputEventProvider
     {
         public IObservable<float> MoveDirection =>
-            this.FixedUpdateAsObservable()
+            this.UpdateAsObservable()
                 .Select(_ =>
                 {
                     var left = Input.GetKey(KeyCode.W) ? -1f : 0f;
