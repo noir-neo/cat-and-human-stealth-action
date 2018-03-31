@@ -223,7 +223,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-659546
+  m_Name: pb_Mesh-195368
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -755,13 +755,35 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 616588078}
-    - target: {fileID: 4800598595219368, guid: 5bb6e203584214461a0db02f222dd9bd, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+    - target: {fileID: 65081352228916434, guid: 5bb6e203584214461a0db02f222dd9bd,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 1123401791823966, guid: 5bb6e203584214461a0db02f222dd9bd, type: 2}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 65081352228916434, guid: 5bb6e203584214461a0db02f222dd9bd,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 65774822586546980, guid: 5bb6e203584214461a0db02f222dd9bd,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 65774822586546980, guid: 5bb6e203584214461a0db02f222dd9bd,
+        type: 2}
+      propertyPath: m_Center.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 65102167037643028, guid: 5bb6e203584214461a0db02f222dd9bd,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 65102167037643028, guid: 5bb6e203584214461a0db02f222dd9bd,
+        type: 2}
+      propertyPath: m_Center.x
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5bb6e203584214461a0db02f222dd9bd, type: 2}
